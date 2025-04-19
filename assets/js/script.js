@@ -16,17 +16,17 @@ $(document).ready(function () {
         }
 
         // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
+        // $('section').each(function () {
+        //     let height = $(this).height();
+        //     let offset = $(this).offset().top - 200;
+        //     let top = $(window).scrollTop();
+        //     let id = $(this).attr('id');
 
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
-        });
+        //     if (top > offset && top < offset + height) {
+        //         $('.navbar ul li a').removeClass('active');
+        //         $('.navbar').find(`[href="#${id}"]`).addClass('active');
+        //     }
+        // });
     });
 
     // smooth scrolling
@@ -144,6 +144,9 @@ function showProjects(projects) {
     /* SCROLL PROJECTS */
     srtop.reveal('.work .box', { interval: 200 });
 
+    /* SCROLL CERTIFCATE */
+    srtop.reveal('.certificate .card', { interval: 200 });
+
 }
 
 fetchData().then(data => {
@@ -231,6 +234,8 @@ srtop.reveal('.education .box', { interval: 200 });
 
 /* SCROLL PROJECTS */
 srtop.reveal('.work .box', { interval: 200 });
+/* SCROLL PROJECTS */
+srtop.reveal('.certificate .card', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline', { delay: 400 });

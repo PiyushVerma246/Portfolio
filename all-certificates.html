@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Certificates</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- ScrollReveal CDN -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+  <section class="certificate-section">
+    <h2>All Certificates</h2>
+    <div id="certificates-container" class="certificates-grid"></div>
+  </section>
+
+  <!-- Modal for image preview -->
+  <div id="image-modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span onclick="closeModal()" class="modal-close">&times;</span>
+      <img id="modal-image" alt="Enlarged Certificate" />
+      <p id="modal-caption"></p>
+    </div>
+  </div>
+
+  <script>
+    // Load all certificates from JSON
+    fetch('certificates.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('certificates-container');
+
+        data.forEach((cert, index) => {
+          const card = document.createElement('div');
+          card.className = 'certificate-card reveal';
+          card.style.transitionDelay = `${index * 50}ms`;
+
+          card.innerHTML = `
+            <img src="${cert.image}" alt="${cert.title}" class="certificate-image" />
+            <h3>${cert.title}</h3>
+            <p><strong>Issuer:</strong> ${cert.issuer}</p>
+            <p><strong>Date:</strong> ${cert.date}</p>
+          `;
+
+          card.querySelector('img').addEventListener('click', () => {
+            openModal(cert.image, cert.title);
+          });
+
+          container.appendChild(card);
+        });
+
+        // Trigger ScrollReveal
+        ScrollReveal().reveal('.reveal', {
+          distance: '30px',
+          origin: 'bottom',
+          duration: 1000,
+          easing: 'ease-in-out',
+          interval: 150
+        });
+      })
+      .catch(error => {
+        console.error('Error loading certificates:', error);
+      });
+
+    // Modal functions
+    function openModal(imageSrc, title) {
+      const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-image');
+      const modalCaption = document.getElementById('modal-caption');
+
+      modal.style.display = 'flex';
+      modalImg.src = imageSrc;
+      modalCaption.textContent = title;
+    }
+
+    function closeModal() {
+      document.getElementById('image-modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

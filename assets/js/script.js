@@ -244,3 +244,62 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+
+
+srtop.reveal('.certificate-section #certificates-container', { delay: 400 });
+
+
+
+
+
+
+const isMainPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("/");
+const displayCount = isMainPage ? 8 : data.length;
+
+
+
+
+fetch('certificates.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('certificates-container');
+    const displayData = isMainPage ? data.slice(0, 8) : data;
+
+    displayData.forEach(cert => {
+      const card = document.createElement('div');
+      card.className = 'certificate-card';
+
+      card.innerHTML = `
+        <img src="${cert.image}" alt="${cert.title}" class="certificate-image" />
+        <h3>${cert.title}</h3>
+        <p><strong>Issuer:</strong> ${cert.issuer}</p>
+        <p><strong>Date:</strong> ${cert.date}</p>
+      `;
+
+      // Open modal on image click
+      card.querySelector('img').addEventListener('click', () => {
+        openModal(cert.image, cert.title);
+      });
+
+      container.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.error('Error loading certificates:', error);
+  });
+
+// Modal Logic
+function openModal(imageSrc, title) {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-image');
+  const modalCaption = document.getElementById('modal-caption');
+
+  modal.style.display = 'flex';
+  modalImg.src = imageSrc;
+  modalCaption.textContent = title;
+}
+
+function closeModal() {
+  document.getElementById('image-modal').style.display = 'none';
+}
+

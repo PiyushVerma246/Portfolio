@@ -1417,3 +1417,170 @@ p {
 .card__description{
   color: white;
 }
+
+
+
+.certificate-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: #00002F;
+}
+
+.certificate-section h2 {
+  margin-bottom: 30px;
+  font-size: 3.2em;
+  color: #ffff;
+}
+
+/* Grid Layout */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.certificate-card {
+  background: #b8c1d8;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Image Styling */
+.certificate-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 180px;
+  filter: drop-shadow(0px 0px 3px black);
+}
+
+/* Text Styling */
+.certificate-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.75em;
+  color: #003366;
+}
+
+.certificate-card p {
+  margin: 5px 0;
+  font-size: 1.35em;
+  color: #333;
+}
+
+.certificate-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.certificate-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .certificate-section {
+    padding: 30px 15px;
+  }
+  
+  .certificate-card {
+    padding: 16px;
+  }
+  
+  .certificate-image {
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-section h2 {
+    font-size: 1.5em;
+  }
+
+  .certificate-card h3 {
+    font-size: 1em;
+  }
+
+  .certificate-card p {
+    font-size: 0.85em;
+  }
+
+  .certificate-image {
+    max-height: 140px;
+  }
+}
+/* Modal overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content box */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 600px;
+  max-height: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Modal close button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+#modal-caption {
+  font-size: 1em;
+  color: #555;
+}
+  
+.view-more-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #003366;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.view-more-btn:hover {
+  background-color: #0055aa;
+}

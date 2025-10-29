@@ -1,5 +1,4 @@
 [
-   
     {
         "name": "HTML5",
         "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
@@ -9,19 +8,21 @@
         "icon": "https://img.icons8.com/color/48/000000/css3.png"
     },
     {
-        "name": "TailwindCSS",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"
+        "name": "n8n",
+        "icon": "https://registry.npmmirror.com/@lobehub/icons-static-png/1.74.0/files/dark/n8n-color.png"
     },
-    {
-        "name": "Bootstrap",
-        "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
-    },
-
     {
         "name": "JavaScript",
         "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
     },
-   
+    {
+        "name": "React",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+    },
+    {
+        "name": "GCP",
+        "icon": "https://img.icons8.com/?size=100&id=WHRLQdbEXQ16&format=png&color=000000"
+    },
     {
         "name": "Python",
         "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
@@ -29,6 +30,22 @@
     {
         "name": "C++",
         "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"
+    },
+    {
+        "name": "MySQL",
+        "icon": "https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000"
+    },
+    {
+        "name": "GSAP",
+        "icon": "https://avatars.githubusercontent.com/u/2386673?v=4"
+    },
+    {
+        "name": "TailwindCSS",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"
+    },
+    {
+        "name": "Bootstrap",
+        "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
     },
     
     {
@@ -38,5 +55,5 @@
     {
         "name": "WordPress",
         "icon": "https://img.icons8.com/color/48/000000/wordpress.png"
-    } ]   
-  
+    }
+]

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Participations | Piyush Verma</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <a href="/" class="logo"><i><img src="assets/images/pv logo.png" alt=""></i> <span class="name">Piyush
+        Verma</span></a>
+
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#education">Education</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="certificate-section"><br><br><br>
+      <h2>All Swags & <span>Participations</span></h2>
+      <div id="participations-full-container" class="certificates-grid"></div>
+    </section>
+
+    <!-- Modal (used for image preview) -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span onclick="closeModal()" class="modal-close">&times;</span>
+        <img id="modal-image" alt="Enlarged" />
+        <p id="modal-caption"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Piyush's Portfolio</h3>
+        <p>Thank you for visiting my personal portfolio website.</p>
+      </div>
+    </div>
+    <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a
+        href="https://www.linkedin.com/in/Piyush-Verma"> Piyush Verma</a></h1>
+  </footer>
+
+  <!-- JS dependencies (same as main site) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="assets/js/script.js"></script>
+
+  <script>
+    // Load participations.json and render full list
+    (function () {
+      const container = document.getElementById('participations-full-container');
+      if (!container) return;
+
+      function makeCard(item) {
+        const card = document.createElement('div');
+        card.className = 'certificate-card';
+
+        const img = document.createElement('img');
+        if (item.image) {
+          img.src = item.image;
+          img.alt = item.title;
+          img.className = 'certificate-image';
+        } else {
+          // placeholder
+          img.src = 'assets/images/placeholder.png';
+          img.alt = item.title;
+          img.className = 'certificate-image';
+        }
+
+        const h3 = document.createElement('h3');
+        h3.textContent = item.title;
+        const p1 = document.createElement('p');
+        p1.innerHTML = `<strong>${item.type}</strong> — ${item.date}`;
+        const p2 = document.createElement('p');
+        p2.textContent = item.description;
+
+        card.appendChild(img);
+        card.appendChild(h3);
+        card.appendChild(p1);
+        card.appendChild(p2);
+
+        if (item.link) {
+          const a = document.createElement('a');
+          a.href = item.link;
+          a.target = '_blank';
+          a.className = 'btn';
+          a.innerHTML = 'Details <i class="fas fa-arrow-right"></i>';
+          card.appendChild(a);
+        }
+
+        // open modal when image clicked
+        img.addEventListener('click', () => {
+          openModal(item.image || img.src, item.title);
+        });
+
+        return card;
+      }
+
+      fetch('participations.json')
+        .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
+        .then(list => {
+          if (!Array.isArray(list) || list.length === 0) {
+            container.innerHTML = '<p class="muted">No participations found.</p>';
+            return;
+          }
+          list.forEach(item => container.appendChild(makeCard(item)));
+          // optional tilt on items that use tilt class
+          VanillaTilt.init(document.querySelectorAll('.tilt'), { max: 10 });
+        })
+        .catch(err => {
+          console.error('Failed to load participations:', err);
+          container.innerHTML = '<p class="muted">Failed to load participations.</p>';
+        });
+    })();
+  </script>
+
+</body>
+
+</html>

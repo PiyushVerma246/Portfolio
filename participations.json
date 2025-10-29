@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "TechCon 2024",
+    "type": "Conference",
+    "date": "2024-08-12",
+    "description": "Participated in TechCon 2024 and received an attendee swag pack (t-shirt & sticker).",
+    "image": "assets/images/certificate/CODE CHARADES 2.0 CERTIFICATE_page-0001.jpg",
+    "link": ""
+  },
+  {
+    "id": 2,
+    "title": "Web Dev Workshop",
+    "type": "Workshop",
+    "date": "2023-11-05",
+    "description": "Hands-on workshop on modern web tooling — received participation certificate and swag.",
+    "image": "",
+    "link": ""
+  },
+  {
+    "id": 3,
+    "title": "Open Source Webinar",
+    "type": "Webinar",
+    "date": "2024-02-20",
+    "description": "Attended a webinar on contributing to open-source projects. Received digital badge.",
+    "image": "",
+    "link": ""
+  }
+]

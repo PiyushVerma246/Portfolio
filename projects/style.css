@@ -40,6 +40,25 @@ html::-webkit-scrollbar-thumb{
 }
 
 /* navbar starts */
+header .logo {
+  /* justify-content: center; */
+  align-items: center;
+  font-size: 1.9rem;
+  display: flex;
+  font-weight: 800;
+  text-decoration: none;
+  color: #0e2431;
+}
+header .logo i img{
+  width: 55px;
+  height: 55px;
+}
+header .logo:hover {
+  color: #fc8c05;
+}
+header .logo{
+  font-size: 2.5rem;
+}
 header{
   position: fixed;
   top: 0; left: 0; right: 0;

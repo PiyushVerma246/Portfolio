@@ -1,4 +1,36 @@
 $(document).ready(function () {
+    // Boot sequence handler
+    const bootLoader = $('.boot-loader');
+    const outputs = $('.terminal-body p');
+    
+    // Check if this is first visit
+    const hasSeenLoader = sessionStorage.getItem('hasSeenLoader');
+    if (hasSeenLoader) {
+        bootLoader.hide();
+        return;
+    }
+    
+    // Add completion status to each output line
+    function updateOutputStatus(index) {
+        const statusTexts = ['OK', 'DONE', 'OK', 'RECEIVED', 'SUCCESS', 'Piyush Verma', ''];
+        if (index < outputs.length - 1) {
+            setTimeout(() => {
+                $(outputs[index]).append(` ${statusTexts[index]}`);
+            }, (index + 1) * 500 + 1000);
+        }
+    }
+
+    // Initialize boot sequence
+    outputs.each((index, element) => {
+        updateOutputStatus(index);
+    });
+
+    // Hide boot loader after sequence completion
+    setTimeout(() => {
+        bootLoader.fadeOut(1000);
+        // Mark that user has seen the loader
+        sessionStorage.setItem('hasSeenLoader', 'true');
+    }, 5000);
 
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
@@ -247,6 +279,12 @@ srtop.reveal('.contact .container .form-group', { delay: 400 });
 
 
 srtop.reveal('.certificate-section #certificates-container', { delay: 400 });
+
+/* SCROLL PARTICIPATIONS (homepage + all-participations page) */
+srtop.reveal('.certificate-section #participations-container', { delay: 300 });
+srtop.reveal('.certificate-section #participations-full-container', { delay: 300 });
+srtop.reveal('.certificate-section .certificate-card', { interval: 200 });
+
 
 
 

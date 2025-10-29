@@ -1,0 +1,35 @@
+{
+  "experience": [
+    {
+      "organization": "Self Employed",
+      "role": "Full Stack Developer",
+      "duration": "Oct 2023 - present",
+      "position": "right"
+    },
+    {
+      "organization": "Geek For Geeks",
+      "role": "Technical Coordinator",
+      "duration": "Sep 2024 - Present",
+      "position": "left"
+    },
+    {
+      "organization": "Smart India Hackathon 2024",
+      "role": "College level finalist | SRMCEM",
+      "duration": "Sep 2024",
+      "position": "right"
+    },
+    {
+      "organization": "Zephyre",
+      "role": "Winner | Ideafest | SRMCEM",
+      "duration": "July - 2024",
+      "position": "right"
+    },
+    {
+      "organization": "code charades",
+      "role": "Participant-2024 | GFG",
+      "duration": "Aug - 2024",
+      "position": "left"
+    }
+   
+  ]
+}

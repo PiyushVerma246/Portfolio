@@ -122,18 +122,22 @@ async function fetchData(type = "skills") {
 }
 
 function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        skillHTML += `
-        <div class="bar">
-              <div class="info">
-                <img src=${skill.icon} alt="skill" />
-                <span>${skill.name}</span>
-              </div>
-            </div>`
-    });
-    skillsContainer.innerHTML = skillHTML;
+        let skillsContainer = document.getElementById("skillsContainer");
+        let skillHTML = "";
+        skills.forEach(skill => {
+                // Support remote URLs and project-relative paths.
+                const safeSrc = skill.icon || '';
+                const fallbackSvg = encodeURIComponent(`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>\n  <rect width='100%' height='100%' fill='%23012670' rx='8'/>\n  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23fff'>No Image</text>\n</svg>`);
+
+                skillHTML += `
+                <div class="bar">
+                    <div class="info">
+                        <img src="${safeSrc}" alt="${skill.name}" draggable="false" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,${fallbackSvg}'" />
+                        <span>${skill.name}</span>
+                    </div>
+                </div>`;
+        });
+        skillsContainer.innerHTML = skillHTML;
 }
 
 function showProjects(projects) {
@@ -325,6 +329,43 @@ fetch('certificates.json')
   .catch(error => {
     console.error('Error loading certificates:', error);
   });
+
+// Gallery rendering (loads images from gallery.json)
+fetch('gallery.json')
+    .then(r => r.ok ? r.json() : Promise.reject('Could not fetch gallery.json'))
+    .then(list => {
+        const gallery = document.getElementById('gallery-container');
+        if (!gallery) return;
+        if (!Array.isArray(list) || list.length === 0) {
+            gallery.innerHTML = '<p class="muted">No gallery images available. Add entries to <code>gallery.json</code>.</p>';
+            return;
+        }
+        gallery.innerHTML = '';
+        list.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'gallery-card tilt';
+
+            card.innerHTML = `
+                <img src="${item.src}" alt="${item.title || ''}" draggable="false"/>
+                <div class="meta"><h4>${item.title || ''}</h4></div>
+            `;
+
+            // open modal on click
+            const img = card.querySelector('img');
+            img.addEventListener('click', () => openModal(item.src, item.title || ''));
+
+            gallery.appendChild(card);
+        });
+
+        // init tilt if available
+        if (window.VanillaTilt) VanillaTilt.init(document.querySelectorAll('#gallery-container .tilt'), { max: 6 });
+
+        // reveal animations
+        srtop.reveal('.gallery .gallery-card', { interval: 100 });
+    })
+    .catch(err => {
+        console.error('Failed to load gallery:', err);
+    });
 
 // Modal Logic
 function openModal(imageSrc, title) {

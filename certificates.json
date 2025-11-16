@@ -1,23 +1,23 @@
 [
     {
         "image": "assets/images/certificate/zephyre.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Zephyre Winner 2023",
+        "issuer": "SRMCEM | IEEE | IIC | Grobots",
+        "date": "April 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/CODE CHARADES 2.0 CERTIFICATE_page-0001.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Code Charades 2.0 Participant",
+        "issuer": "GeeksForGeeks",
+        "date": "7 June 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/bithax.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Bithax runner up 2024",
+        "issuer": "Amity Innovation club",
+        "date": "14th December 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {

@@ -1,66 +1,62 @@
 [
-    {
-      "name": "animal Rescue",
-      "desc": "An animal rescue website using HTML, CSS & JS only. It is a platform where we adopt, donate & rescue animals.",
-      "image": "rescue.png",
-      "category": "mern",
-      "links": {
-        "view": "",
-        "code": ""
-      }
-    },
-    {
-      "name": "RS_Photography_Edit",
-      "desc": "a Photography website using HTML, CSS only. It has A Massive Collection of High-Quality images, videos & editing tutorials",
-      "image": "photography.png",
-      "category": "mern",
-      "links": {
-        "view": "",
-        "code": ""
-      }
+  {
+    "name": "AgroWise",
+    "desc": "AgroWise is a modern agriculture assistant offering quick crop advice, weather alerts, and farm insights.",
+    "image": "agro.png",
+    "category": "mern",
+    "links": {
+      "view": "",
+      "code": ""
     }
-    ,
-    {
-      "name": "Travello",
-      "desc": "Travello is user centric website which offers all travel-realted needs of user in one place",
-      "image": "travel.png",
-      "category": "mern",
-      "links": {
-        "view": "",
-        "code": ""
-      }
+  },
+  {
+    "name": "Campus Sathi",
+    "desc": "Campus Sathi is an AI-powered guide that delivers instant help with circulars, deadlines, FAQs, and campus services.",
+    "image": "campus sathi.png",
+    "category": "mern",
+    "links": {
+      "view": "",
+      "code": ""
     }
-    ,
-    {
-      "name": "E-Commerce",
-      "desc": "Full-Stack Instagram clone built using MERN stack and realtime chat with the help of socket.iO",
-      "image": "shop.png",
-      "category": "mern",
-      "links": {
-        "view": "",
-        "code": ""
-      }
+  },
+  {
+    "name": "Carbon Twin",
+    "desc": "Carbon Twin creates a digital replica of your carbon footprint, making reduction easier and measurable.",
+    "image": "carbon twin.png",
+    "category": "mern",
+    "links": {
+      "view": "",
+      "code": ""
     }
-    ,
-    {
-      "name": "Meesho Clone",
-      "desc": "Full-Stack Instagram clone built using MERN stack and realtime chat with the help of socket.iO",
-      "image": "meesho.png",
-      "category": "mern",
-      "links": {
-        "view": "",
-        "code": ""
-      }
+  },
+  {
+    "name": "animal Rescue",
+    "desc": "An animal rescue website using HTML, CSS & JS only. It is a platform where we adopt, donate & rescue animals.",
+    "image": "rescue.png",
+    "category": "mern",
+    "links": {
+      "view": "",
+      "code": ""
     }
-    ,
-    {
-      "name": "Flipkart Clone",
-      "desc": "Full-Stack Instagram clone built using MERN stack and realtime chat with the help of socket.iO",
-      "image": "flipkart.png",
-      "category": "mern",
-      "links": {
-        "view": "",
-        "code": ""
-      }
+  },
+  {
+    "name": "RS_Photography_Edit",
+    "desc": "a Photography website using HTML, CSS only. It has A Massive Collection of High-Quality images, videos & editing tutorials",
+    "image": "photography.png",
+    "category": "mern",
+    "links": {
+      "view": "",
+      "code": ""
     }
-    ]
+  },
+  {
+    "name": "Travello",
+    "desc": "Travello is user centric website which offers all travel-realted needs of user in one place",
+    "image": "travel.png",
+    "category": "mern",
+    "links": {
+      "view": "",
+      "code": ""
+    }
+  }
+]

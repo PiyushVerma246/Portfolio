@@ -39,6 +39,52 @@ It reflects my learning, growth, and passion for web development.
 - **GitHub Pages**
 
 ---
+## 🛠️ Skills
 
-## 📂 Project Structure
+### 💻 Frontend Development
+- HTML5  
+- CSS3  
+- JavaScript (ES6+)  
+- Responsive Web Design  
+- DOM Manipulation  
 
+---
+
+### 🖥️ Backend Development
+- Java (Core Java)  
+- JDBC (Database Connectivity)  
+- Basic REST API Concepts  
+- Server-side Logic  
+- Authentication & Authorization (Basics)
+
+---
+
+### 🗄️ Databases
+- MySQL  
+- SQL Queries  
+- Database Design (Basics)
+
+---
+
+### ⚙️ Tools & Technologies
+- Git  
+- GitHub  
+- GitHub Pages  
+- VS Code  
+- Eclipse / IntelliJ IDEA  
+
+---
+
+### 🧠 Core Concepts
+- Object-Oriented Programming (OOP)  
+- Data Structures & Algorithms (Basics)  
+- Debugging & Problem Solving  
+- Code Optimization  
+
+---
+
+### 🚀 Soft Skills
+- Self-Learning  
+- Consistency & Discipline  
+- Team Collaboration  
+- Attention to Detail

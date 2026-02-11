@@ -15,8 +15,8 @@
     },
     {
         "image": "assets/images/certificate/bithax.jpg",
-        "title": "Bithax runner up 2024",
-        "issuer": "Amity Innovation club",
+        "title": "Bithax Runner Up 2024",
+        "issuer": "Amity Innovation Club",
         "date": "14th December 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
@@ -29,14 +29,14 @@
     },
     {
         "image": "assets/images/certificate/naukri-campus.jpeg",
-        "title": "Naukri Campus Young Tourks",
+        "title": "Naukri Campus Young Turks",
         "issuer": "Naukri Campus",
         "date": "Sep 2025",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/hack2skill-certificate.png",
-        "title": "Agentic AI day Hackathon",
+        "title": "Agentic AI Day Hackathon",
         "issuer": "Hack2Skill",
         "date": "July 2025",
         "certificateUrl": "https://example.com/certificate1"

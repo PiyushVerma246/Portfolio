@@ -311,7 +311,6 @@ srtop.reveal('.certificate-section .certificate-card', { interval: 200 });
 
 
 const isMainPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("/");
-const displayCount = isMainPage ? 8 : data.length;
 
 
 

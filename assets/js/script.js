@@ -345,41 +345,48 @@ fetch('certificates.json')
         console.error('Error loading certificates:', error);
     });
 
-// Gallery rendering (loads images from gallery.json)
-fetch('gallery.json')
-    .then(r => r.ok ? r.json() : Promise.reject('Could not fetch gallery.json'))
+// Events rendering (loads images from events.json)
+fetch('events.json')
+    .then(r => r.ok ? r.json() : Promise.reject('Could not fetch events.json'))
     .then(list => {
-        const gallery = document.getElementById('gallery-container');
-        if (!gallery) return;
+        const eventsContainer = document.getElementById('events-container');
+        if (!eventsContainer) return;
         if (!Array.isArray(list) || list.length === 0) {
-            gallery.innerHTML = '<p class="muted">No gallery images available. Add entries to <code>gallery.json</code>.</p>';
+            eventsContainer.innerHTML = '<p class="muted">No events available. Add entries to <code>events.json</code>.</p>';
             return;
         }
-        gallery.innerHTML = '';
+        eventsContainer.innerHTML = '';
         list.forEach(item => {
             const card = document.createElement('div');
-            card.className = 'gallery-card tilt';
+            card.className = 'event-card tilt';
 
             card.innerHTML = `
-                <img src="${item.src}" alt="${item.title || ''}" draggable="false"/>
-                <div class="meta"><h4>${item.title || ''}</h4></div>
+                <img src="${item.image}" alt="${item.title}" draggable="false"/>
+                <div class="content">
+                    <h3>${item.title}</h3>
+                    <div class="date">${item.date}</div>
+                    <p>${item.description}</p>
+                    <div class="btn-wrap">
+                        <button class="terminal-btn">cat details.txt <i class="fas fa-terminal"></i></button>
+                    </div>
+                </div>
             `;
 
-            // open modal on click
+            // open modal on image click
             const img = card.querySelector('img');
-            img.addEventListener('click', () => openModal(item.src, item.title || ''));
+            img.addEventListener('click', () => openModal(item.image, item.title));
 
-            gallery.appendChild(card);
+            eventsContainer.appendChild(card);
         });
 
         // init tilt if available
-        if (window.VanillaTilt) VanillaTilt.init(document.querySelectorAll('#gallery-container .tilt'), { max: 6 });
+        if (window.VanillaTilt) VanillaTilt.init(document.querySelectorAll('#events-container .tilt'), { max: 8 });
 
         // reveal animations
-        srtop.reveal('.gallery .gallery-card', { interval: 100 });
+        srtop.reveal('.events .event-card', { interval: 150 });
     })
     .catch(err => {
-        console.error('Failed to load gallery:', err);
+        console.error('Failed to load events:', err);
     });
 
 // Modal Logic

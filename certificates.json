@@ -22,42 +22,42 @@
     },
     {
         "image": "assets/images/certificate/tvs-credit.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "TVS Credit Epic 7",
+        "issuer": "TVS Credit",
+        "date": "Sep 2025",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/naukri-campus.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Naukri Campus Young Tourks",
+        "issuer": "Naukri Campus",
+        "date": "Sep 2025",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/hack2skill-certificate.png",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Agentic AI day Hackathon",
+        "issuer": "Hack2Skill",
+        "date": "July 2025",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/nxtwave.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "GenAi Buildathon",
+        "issuer": "NxtWave",
+        "date": "Aug 2025",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/tata.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "GenAi Data Analytics Job Simulation",
+        "issuer": "Tata Forage",
+        "date": "27 July 2025",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/neo4j.jpg",
-        "title": "Certified Web Developer",
+        "title": "Neo4j ",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"

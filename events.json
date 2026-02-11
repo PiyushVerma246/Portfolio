@@ -1,0 +1,26 @@
+[
+    {
+        "title": "AlgoArena",
+        "date": "21st Nov 2025",
+        "description": "The event was aimed at strengthening problem-solving skills and fostering a competitive programming culture among students",
+        "image": "assets/images/algo.jfif"
+    },
+    {
+        "title": "Blockchain Workshop",
+        "date": "13th Nov 2026",
+        "description": "The Web3 & Blockchain Workshop with HeLa Labs × GFG SRMCEM",
+        "image": "assets/images/hela.jfif"
+    },
+    {
+        "title": "GenAI Hackathon",
+        "date": "6th Nov 2025",
+        "description": "Led the Ideathon with GDG SRMCEM.",
+        "image": "assets/images/gen.jfif"
+    },
+    {
+        "title": "Code Charades 3.0",
+        "date": "19th May 2025",
+        "description": "Code Charades is a time-bound web development challenge.",
+        "image": "assets/images/codecharades-1.jpg"
+    }
+]

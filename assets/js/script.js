@@ -2,14 +2,14 @@ $(document).ready(function () {
     // Boot sequence handler
     const bootLoader = $('.boot-loader');
     const outputs = $('.terminal-body p');
-    
+
     // Check if this is first visit
     const hasSeenLoader = sessionStorage.getItem('hasSeenLoader');
     if (hasSeenLoader) {
         bootLoader.hide();
         return;
     }
-    
+
     // Add completion status to each output line
     function updateOutputStatus(index) {
         const statusTexts = ['OK', 'DONE', 'OK', 'RECEIVED', 'SUCCESS', 'Piyush Verma', ''];
@@ -69,22 +69,37 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
-    // <!-- emailjs to mail contact form data -->
+    // FormSubmit.co handles the form submission natively via HTML action.
+    // We intercept it to use AJAX for a better UX (no redirect).
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
         event.preventDefault();
+        const form = event.target;
+        const data = new FormData(form);
+
+        // Show loading state if desired (optional)
+        const submitBtn = $(form).find('button[type="submit"]');
+        const originalBtnText = submitBtn.html();
+        submitBtn.html('Sending... <i class="fa fa-spinner fa-spin"></i>').prop('disabled', true);
+
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert("Thank you! Your message has been sent successfully.");
+                form.reset();
+            } else {
+                alert("Oops! There was a problem submitting your form. Please try again.");
+            }
+        }).catch(error => {
+            alert("Oops! There was a problem submitting your form. Please try again.");
+        }).finally(() => {
+            submitBtn.html(originalBtnText).prop('disabled', false);
+        });
     });
-    // <!-- emailjs to mail contact form data -->
 
 });
 
@@ -122,22 +137,22 @@ async function fetchData(type = "skills") {
 }
 
 function showSkills(skills) {
-        let skillsContainer = document.getElementById("skillsContainer");
-        let skillHTML = "";
-        skills.forEach(skill => {
-                // Support remote URLs and project-relative paths.
-                const safeSrc = skill.icon || '';
-                const fallbackSvg = encodeURIComponent(`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>\n  <rect width='100%' height='100%' fill='%23012670' rx='8'/>\n  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23fff'>No Image</text>\n</svg>`);
+    let skillsContainer = document.getElementById("skillsContainer");
+    let skillHTML = "";
+    skills.forEach(skill => {
+        // Support remote URLs and project-relative paths.
+        const safeSrc = skill.icon || '';
+        const fallbackSvg = encodeURIComponent(`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>\n  <rect width='100%' height='100%' fill='%23012670' rx='8'/>\n  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23fff'>No Image</text>\n</svg>`);
 
-                skillHTML += `
+        skillHTML += `
                 <div class="bar">
                     <div class="info">
                         <img src="${safeSrc}" alt="${skill.name}" draggable="false" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,${fallbackSvg}'" />
                         <span>${skill.name}</span>
                     </div>
                 </div>`;
-        });
-        skillsContainer.innerHTML = skillHTML;
+    });
+    skillsContainer.innerHTML = skillHTML;
 }
 
 function showProjects(projects) {
@@ -174,7 +189,7 @@ function showProjects(projects) {
         origin: 'top',
         distance: '80px',
         duration: 1000,
-        reset: true
+        reset: false
     });
 
     /* SCROLL PROJECTS */
@@ -237,7 +252,7 @@ const srtop = ScrollReveal({
     origin: 'top',
     distance: '80px',
     duration: 1000,
-    reset: true
+    reset: false
 });
 
 /* SCROLL HOME */
@@ -302,33 +317,33 @@ const displayCount = isMainPage ? 8 : data.length;
 
 
 fetch('certificates.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('certificates-container');
-    const displayData = isMainPage ? data.slice(0, 8) : data;
+    .then(response => response.json())
+    .then(data => {
+        const container = document.getElementById('certificates-container');
+        const displayData = isMainPage ? data.slice(0, 8) : data;
 
-    displayData.forEach(cert => {
-      const card = document.createElement('div');
-      card.className = 'certificate-card';
+        displayData.forEach(cert => {
+            const card = document.createElement('div');
+            card.className = 'certificate-card';
 
-      card.innerHTML = `
+            card.innerHTML = `
         <img src="${cert.image}" alt="${cert.title}" class="certificate-image" />
         <h3>${cert.title}</h3>
         <p><strong>Issuer:</strong> ${cert.issuer}</p>
         <p><strong>Date:</strong> ${cert.date}</p>
       `;
 
-      // Open modal on image click
-      card.querySelector('img').addEventListener('click', () => {
-        openModal(cert.image, cert.title);
-      });
+            // Open modal on image click
+            card.querySelector('img').addEventListener('click', () => {
+                openModal(cert.image, cert.title);
+            });
 
-      container.appendChild(card);
+            container.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error('Error loading certificates:', error);
     });
-  })
-  .catch(error => {
-    console.error('Error loading certificates:', error);
-  });
 
 // Gallery rendering (loads images from gallery.json)
 fetch('gallery.json')
@@ -369,16 +384,16 @@ fetch('gallery.json')
 
 // Modal Logic
 function openModal(imageSrc, title) {
-  const modal = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-image');
-  const modalCaption = document.getElementById('modal-caption');
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-image');
+    const modalCaption = document.getElementById('modal-caption');
 
-  modal.style.display = 'flex';
-  modalImg.src = imageSrc;
-  modalCaption.textContent = title;
+    modal.style.display = 'flex';
+    modalImg.src = imageSrc;
+    modalCaption.textContent = title;
 }
 
 function closeModal() {
-  document.getElementById('image-modal').style.display = 'none';
+    document.getElementById('image-modal').style.display = 'none';
 }
 

@@ -47,7 +47,6 @@
         "name": "Bootstrap",
         "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
     },
-    
     {
         "name": "GitHub",
         "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
@@ -55,5 +54,13 @@
     {
         "name": "WordPress",
         "icon": "https://img.icons8.com/color/48/000000/wordpress.png"
+    },
+    {
+        "name": "Figma",
+        "icon": "https://img.icons8.com/color/48/000000/figma--v1.png"
+    },
+    {
+        "name": "Canva",
+        "icon": "https://img.icons8.com/color/48/000000/canva.png"
     }
 ]

@@ -7,7 +7,7 @@
         "certificateUrl": "https://example.com/certificate1"
     },
     {
-        "image": "assets/images/certificate/CODE CHARADES 2.0 CERTIFICATE_page-0001.jpg",
+        "image": "assets/images/certificate/code-charades-2-0.jpg",
         "title": "Code Charades 2.0 Participant",
         "issuer": "GeeksForGeeks",
         "date": "7 June 2024",
@@ -21,21 +21,21 @@
         "certificateUrl": "https://example.com/certificate1"
     },
     {
-        "image": "assets/images/certificate/TVS credit.jpeg",
+        "image": "assets/images/certificate/tvs-credit.jpeg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
-        "image": "assets/images/certificate/naukri campus.jpeg",
+        "image": "assets/images/certificate/naukri-campus.jpeg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
-        "image": "assets/images/certificate/Hack2skill-Certificate.png",
+        "image": "assets/images/certificate/hack2skill-certificate.png",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
@@ -55,10 +55,8 @@
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
-   
-   
     {
-        "image": "assets/images/certificate/neo 4j.jpg",
+        "image": "assets/images/certificate/neo4j.jpg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
@@ -92,47 +90,41 @@
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
-    
     {
         "image": "assets/images/certificate/ibm.jpg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
-    }
-    ,
+    },
     {
         "image": "assets/images/certificate/nestle.jpg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
-    }
-    ,
+    },
     {
         "image": "assets/images/certificate/studyjam.jpeg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
-    }
-    ,
+    },
     {
         "image": "assets/images/certificate/git.jpg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
-    }
-    ,
+    },
     {
         "image": "assets/images/certificate/css.jpg",
         "title": "Certified Web Developer",
         "issuer": "FreeCodeCamp",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
-    }
-    ,
+    },
     {
         "image": "assets/images/certificate/figma.jpg",
         "title": "Certified Web Developer",
@@ -140,5 +132,4 @@
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
     }
-    
 ]

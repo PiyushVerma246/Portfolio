@@ -1,22 +1,22 @@
 [
   {
-    "name": "AgroWise",
-    "desc": "AgroWise is a modern agriculture assistant offering quick crop advice, weather alerts, and farm insights.",
-    "image": "agro.png",
-    "category": "mern",
-    "links": {
-      "view": "",
-      "code": ""
-    }
-  },
-  {
     "name": "Campus Sathi",
     "desc": "Campus Sathi is an AI-powered guide that delivers instant help with circulars, deadlines, FAQs, and campus services.",
     "image": "campus sathi.png",
     "category": "mern",
     "links": {
-      "view": "",
-      "code": ""
+      "view": "https://campus-sathi-1.onrender.com/",
+      "code": "https://github.com/PiyushVerma246/campus_sathi"
+    }
+  },
+  {
+    "name": "AgroWise",
+    "desc": "AgroWise is a modern agriculture assistant offering quick crop advice, weather alerts, and farm insights.",
+    "image": "agro.png",
+    "category": "mern",
+    "links": {
+      "view": "https://agrowise-seven.vercel.app/",
+      "code": "https://github.com/PiyushVerma246/AgroWise"
     }
   },
   {
@@ -35,8 +35,8 @@
     "image": "rescue.png",
     "category": "mern",
     "links": {
-      "view": "",
-      "code": ""
+      "view": "https://piyushverma246.github.io/Animal-Rescue/",
+      "code": "https://github.com/PiyushVerma246/Animal-Rescue"
     }
   },
   {
@@ -45,8 +45,8 @@
     "image": "photography.png",
     "category": "mern",
     "links": {
-      "view": "",
-      "code": ""
+      "view": "https://rs-photography-edit.vercel.app/",
+      "code": "https://github.com/PiyushVerma246/rs_photography_edit"
     }
   },
   {
@@ -55,8 +55,8 @@
     "image": "travel.png",
     "category": "mern",
     "links": {
-      "view": "",
-      "code": ""
+      "view": "https://travello-orcin.vercel.app/",
+      "code": "https://github.com/PiyushVerma246/Travello"
     }
   }
 ]

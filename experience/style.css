@@ -196,8 +196,8 @@ header .navbar ul li a:hover{
   position: absolute;
   width: 6px;
   background: #020133;
-  top: 0;
-  bottom: 0;
+  top: 5px;
+  bottom: 5px;
   left: 50%;
   margin-left: -3px;
   z-index: -2;

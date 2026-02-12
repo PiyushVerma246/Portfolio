@@ -7,30 +7,29 @@ $(document).ready(function () {
     const hasSeenLoader = sessionStorage.getItem('hasSeenLoader');
     if (hasSeenLoader) {
         bootLoader.hide();
-        return;
-    }
-
-    // Add completion status to each output line
-    function updateOutputStatus(index) {
-        const statusTexts = ['OK', 'DONE', 'OK', 'RECEIVED', 'SUCCESS', 'Piyush Verma', ''];
-        if (index < outputs.length - 1) {
-            setTimeout(() => {
-                $(outputs[index]).append(` ${statusTexts[index]}`);
-            }, (index + 1) * 500 + 1000);
+    } else {
+        // Add completion status to each output line
+        function updateOutputStatus(index) {
+            const statusTexts = ['OK', 'DONE', 'OK', 'RECEIVED', 'SUCCESS', 'Piyush Verma', ''];
+            if (index < outputs.length - 1) {
+                setTimeout(() => {
+                    $(outputs[index]).append(` ${statusTexts[index]}`);
+                }, (index + 1) * 500 + 1000);
+            }
         }
+
+        // Initialize boot sequence
+        outputs.each((index, element) => {
+            updateOutputStatus(index);
+        });
+
+        // Hide boot loader after sequence completion
+        setTimeout(() => {
+            bootLoader.fadeOut(1000);
+            // Mark that user has seen the loader
+            sessionStorage.setItem('hasSeenLoader', 'true');
+        }, 5000);
     }
-
-    // Initialize boot sequence
-    outputs.each((index, element) => {
-        updateOutputStatus(index);
-    });
-
-    // Hide boot loader after sequence completion
-    setTimeout(() => {
-        bootLoader.fadeOut(1000);
-        // Mark that user has seen the loader
-        sessionStorage.setItem('hasSeenLoader', 'true');
-    }, 5000);
 
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
@@ -66,7 +65,11 @@ $(document).ready(function () {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+        }, 500, 'linear');
+
+        // Close menu on link click if it's open
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
     });
 
     // FormSubmit.co handles the form submission natively via HTML action.
@@ -118,7 +121,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "web development"],
+    strings: ["frontend development", "backend development", "UI/UX Designing", "Ai Agents development"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -366,7 +369,7 @@ fetch('events.json')
                     <div class="date">${item.date}</div>
                     <p>${item.description}</p>
                     <div class="btn-wrap">
-                        <button class="terminal-btn">cat details.txt <i class="fas fa-terminal"></i></button>
+                        <button class="terminal-btn">View <i class="fas fa-terminal"></i></button>
                     </div>
                 </div>
             `;

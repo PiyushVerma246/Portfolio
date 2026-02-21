@@ -160,10 +160,16 @@ function showSkills(skills) {
 
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
+    if (!projectsContainer) return;
+
     let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+    projects.forEach((project, index) => {
+        let viewBtn = project.links.view ? `<a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>` : "";
+        let codeBtn = project.links.code ? `<a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>` : "";
+        let hideClass = index >= 6 ? "home-hide" : "";
+
         projectHTML += `
-        <div class="box tilt">
+        <div class="grid-item ${project.category} ${hideClass} box tilt">
       <img draggable="false" src="assets/images/projects/${project.image}" alt="project" />
       <div class="content">
         <div class="tag">
@@ -172,14 +178,30 @@ function showProjects(projects) {
         <div class="desc">
           <p>${project.desc}</p>
           <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+            ${viewBtn}
+            ${codeBtn}
           </div>
         </div>
       </div>
     </div>`
     });
     projectsContainer.innerHTML = projectHTML;
+
+    // <!-- isotope filter products -->
+    var $grid = $('#work .box-container').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        filter: ':not(.home-hide)'
+    });
+
+    // filter items on button click
+    $('.button-group').on('click', 'button', function () {
+        $('.button-group').find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+    });
 
     // <!-- tilt js effect starts -->
     VanillaTilt.init(document.querySelectorAll(".tilt"), {
@@ -188,19 +210,9 @@ function showProjects(projects) {
     // <!-- tilt js effect ends -->
 
     /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: false
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
-
-    /* SCROLL CERTIFCATE */
-    srtop.reveal('.certificate .card', { interval: 200 });
-
+    if (typeof srtop !== 'undefined') {
+        srtop.reveal('.work .box', { interval: 200 });
+    }
 }
 
 fetchData().then(data => {
@@ -358,7 +370,7 @@ fetch('events.json')
             return;
         }
         eventsContainer.innerHTML = '';
-        list.forEach(item => {
+        list.forEach((item, index) => {
             const card = document.createElement('div');
             card.className = 'event-card tilt';
 
@@ -369,16 +381,20 @@ fetch('events.json')
                     <div class="date">${item.date}</div>
                     <p>${item.description}</p>
                     <div class="btn-wrap">
-                        <button class="terminal-btn">View <i class="fas fa-terminal"></i></button>
+                        <button class="terminal-btn view-event-btn" data-index="${index}">View <i class="fas fa-terminal"></i></button>
                     </div>
                 </div>
             `;
 
-            // open modal on image click
-            const img = card.querySelector('img');
-            img.addEventListener('click', () => openModal(item.image, item.title));
-
             eventsContainer.appendChild(card);
+        });
+
+        // Add event listeners for View buttons
+        document.querySelectorAll('.view-event-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const index = e.currentTarget.getAttribute('data-index');
+                openEventModal(list[index]);
+            });
         });
 
         // init tilt if available
@@ -404,5 +420,56 @@ function openModal(imageSrc, title) {
 
 function closeModal() {
     document.getElementById('image-modal').style.display = 'none';
+}
+
+function openEventModal(eventData) {
+    const modal = document.getElementById('event-modal');
+    const gallery = document.getElementById('event-gallery');
+    const title = document.getElementById('event-title');
+    const date = document.getElementById('event-date');
+    const role = document.getElementById('event-role');
+    const desc = document.getElementById('event-desc-full');
+    const gPhotos = document.getElementById('event-google-photos');
+    const instagram = document.getElementById('event-instagram');
+    const linkedin = document.getElementById('event-linkedin');
+
+    // Clear and fill gallery
+    gallery.innerHTML = '';
+    if (eventData.images && eventData.images.length > 0) {
+        eventData.images.forEach(imgSrc => {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = eventData.title;
+            gallery.appendChild(img);
+        });
+    } else {
+        const img = document.createElement('img');
+        img.src = eventData.image;
+        img.alt = eventData.title;
+        gallery.appendChild(img);
+    }
+
+    title.textContent = eventData.title;
+    date.innerHTML = `<i class="fas fa-calendar-alt"></i> ${eventData.date}`;
+    role.innerHTML = `<i class="fas fa-user-tag"></i> Role: ${eventData.role || 'Contributor'}`;
+    desc.textContent = eventData.description;
+
+    // Links
+    gPhotos.href = eventData.googlePhotos || '#';
+    instagram.href = eventData.instagram || '#';
+    linkedin.href = eventData.linkedin || '#';
+
+    // Show/hide links based on availability
+    gPhotos.style.display = eventData.googlePhotos && eventData.googlePhotos !== '#' ? 'inline-block' : 'none';
+    instagram.style.display = eventData.instagram && eventData.instagram !== '#' ? 'inline-block' : 'none';
+    linkedin.style.display = eventData.linkedin && eventData.linkedin !== '#' ? 'inline-block' : 'none';
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent scroll
+}
+
+function closeEventModal() {
+    document.getElementById('event-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 

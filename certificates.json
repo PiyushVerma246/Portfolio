@@ -57,79 +57,79 @@
     },
     {
         "image": "assets/images/certificate/neo4j.jpg",
-        "title": "Neo4j ",
-        "issuer": "FreeCodeCamp",
+        "title": "Neo4j Certified Professional",
+        "issuer": "Neo4j",
         "date": "March 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/ncat.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Naukri Campus Aptitude Test (NCAT)",
+        "issuer": "Media7",
+        "date": "May 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/infosys.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Angular Foundation Certificate",
+        "issuer": "Infosys Springboard",
+        "date": "May 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/gemini.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Introduction to Generative AI",
+        "issuer": "Simplilearn | Google Cloud",
+        "date": "May 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/copilot.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Introduction to Microsoft Copilot",
+        "issuer": "Simplilearn | Microsoft",
+        "date": "May 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/ibm.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Python 101 for Data Science",
+        "issuer": "IBM",
+        "date": "May 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/nestle.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Nestle E-Learning 2025",
+        "issuer": "Guvi",
+        "date": "May 2025",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/studyjam.jpeg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Problem Solving & SQL (Badges)",
+        "issuer": "HackerRank",
+        "date": "June 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/git.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Git & Github Basics",
+        "issuer": "LetsUpgrade",
+        "date": "sep 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/css.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "CSS Basic ",
+        "issuer": "LetsUpgrade",
+        "date": "sep 2024",
         "certificateUrl": "https://example.com/certificate1"
     },
     {
         "image": "assets/images/certificate/figma.jpg",
-        "title": "Certified Web Developer",
-        "issuer": "FreeCodeCamp",
-        "date": "March 2024",
+        "title": "Figma Fundamentals",
+        "issuer": "LetsUpgrade",
+        "date": "oct 2024",
         "certificateUrl": "https://example.com/certificate1"
     }
 ]

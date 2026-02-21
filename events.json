@@ -3,30 +3,65 @@
         "title": "Vibe coding contest",
         "date": "28st Nov 2025",
         "description": "Organizing an ideathon in our college with my colleagues",
-        "image": "assets/images/vcc.jpg"
+        "image": "assets/images/vcc.jpg",
+        "images": [
+            "assets/images/vcc.jpg"
+        ],
+        "googlePhotos": "#",
+        "instagram": "#",
+        "linkedin": "#",
+        "role": "Event Organizer & Management Lead"
     },
     {
         "title": "AlgoArena",
         "date": "21st Nov 2025",
         "description": "The event was aimed at strengthening problem-solving skills and fostering a competitive programming culture among students",
-        "image": "assets/images/algo.jfif"
+        "image": "assets/images/algo.jfif",
+        "images": [
+            "assets/images/algo.jfif"
+        ],
+        "googlePhotos": "#",
+        "instagram": "#",
+        "linkedin": "#",
+        "role": "Technical Lead & Problem Setter"
     },
     {
         "title": "Blockchain Workshop",
         "date": "13th Nov 2026",
         "description": "The Web3 & Blockchain Workshop with HeLa Labs × GFG SRMCEM",
-        "image": "assets/images/hela.jfif"
+        "image": "assets/images/hela.jfif",
+        "images": [
+            "assets/images/hela.jfif"
+        ],
+        "googlePhotos": "#",
+        "instagram": "#",
+        "linkedin": "#",
+        "role": "Coordinator"
     },
     {
         "title": "GenAI Hackathon",
         "date": "6th Nov 2025",
         "description": "Led the Ideathon with GDG SRMCEM.",
-        "image": "assets/images/gen.jfif"
+        "image": "assets/images/gen.jfif",
+        "images": [
+            "assets/images/gen.jfif"
+        ],
+        "googlePhotos": "#",
+        "instagram": "#",
+        "linkedin": "#",
+        "role": "Lead Organizer"
     },
     {
         "title": "Code Charades 3.0",
         "date": "19th May 2025",
         "description": "Code Charades is a time-bound web development challenge.",
-        "image": "assets/images/codecharades-1.jpg"
+        "image": "assets/images/codecharades-1.jpg",
+        "images": [
+            "assets/images/codecharades-1.jpg"
+        ],
+        "googlePhotos": "#",
+        "instagram": "#",
+        "linkedin": "#",
+        "role": "Event Lead"
     }
 ]

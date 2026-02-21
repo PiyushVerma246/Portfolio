@@ -1,5 +1,15 @@
 [
   {
+    "name": "AgroWise",
+    "desc": "AgroWise is a modern agriculture assistant offering quick crop advice, weather alerts, and farm insights.",
+    "image": "agro.png",
+    "category": "mern",
+    "links": {
+      "view": "https://agrowise-seven.vercel.app/",
+      "code": "https://github.com/PiyushVerma246/AgroWise"
+    }
+  },
+  {
     "name": "Campus Sathi",
     "desc": "Campus Sathi is an AI-powered guide that delivers instant help with circulars, deadlines, FAQs, and campus services.",
     "image": "campus-sathi.png",
@@ -10,16 +20,44 @@
     }
   },
   {
-    "name": "AgroWise",
-    "desc": "AgroWise is a modern agriculture assistant offering quick crop advice, weather alerts, and farm insights.",
-    "image": "agro.png",
-    "category": "mern",
+    "name": "Designed from Start to Finish",
+    "desc": "This Agrowise PPT showcases my design capabilities. Every slide has been manually crafted in PowerPoint—no AI tools were used.",
+    "image": "agro.jpg",
+    "category": "uiux",
     "links": {
-      "view": "https://agrowise-seven.vercel.app/",
-      "code": "https://github.com/PiyushVerma246/AgroWise"
+      "view": "https://drive.google.com/file/d/14GWNwmPwxjycNH6aCPtlp7DtNm46fYEP/view?usp=sharing"
     }
   },
-   {
+  {
+    "name": "Manually Designed PPT (Campus Sathi)",
+    "desc": "This Campus_Sathi PPT showcases my design capabilities. Every slide has been manually crafted in PowerPoint—no AI tools were used.",
+    "image": "camp.jpg",
+    "category": "uiux",
+    "links": {
+      "view": "https://drive.google.com/file/d/1vF8lIFTqbEya-g5MEk5S0CcM3R2_lseE/view?usp=sharing"
+    }
+  },
+  {
+    "name": "RS_Photography_Edit",
+    "desc": "a Photography website using HTML, CSS only. It has A Massive Collection of High-Quality images, videos & editing tutorials",
+    "image": "photography.png",
+    "category": "basicweb",
+    "links": {
+      "view": "https://rs-photography-edit.vercel.app/",
+      "code": "https://github.com/PiyushVerma246/rs_photography_edit"
+    }
+  },
+  {
+    "name": "Animal Rescue",
+    "desc": "An animal rescue website using HTML, CSS & JS only. It is a platform where we adopt, donate & rescue animals.",
+    "image": "rescue.png",
+    "category": "basicweb",
+    "links": {
+      "view": "https://piyushverma246.github.io/Animal-Rescue/",
+      "code": "https://github.com/PiyushVerma246/Animal-Rescue"
+    }
+  },
+  {
     "name": "Travello",
     "desc": "Travello is user centric website which offers all travel-realted needs of user in one place",
     "image": "travel.png",
@@ -38,26 +76,33 @@
       "view": "https://elvis280.github.io/CarbonTwin/"
     }
   },
- 
   {
-    "name": "RS_Photography_Edit",
-    "desc": "a Photography website using HTML, CSS only. It has A Massive Collection of High-Quality images, videos & editing tutorials",
-    "image": "photography.png",
-    "category": "mern",
+    "name": "Manually Designed PPT (Carbon Twin)",
+    "desc": "This Carbon_Twin PPT showcases my design capabilities. Every slide has been manually crafted in PowerPoint—no AI tools were used.",
+    "image": "carb.jpg",
+    "category": "uiux",
     "links": {
-      "view": "https://rs-photography-edit.vercel.app/",
-      "code": "https://github.com/PiyushVerma246/rs_photography_edit"
+      "view": "https://drive.google.com/file/d/1vF8lIFTqbEya-g5MEk5S0CcM3R2_lseE/view?usp=sharing"
     }
   },
-   {
-    "name": "animal Rescue",
-    "desc": "An animal rescue website using HTML, CSS & JS only. It is a platform where we adopt, donate & rescue animals.",
-    "image": "rescue.png",
-    "category": "mern",
+  {
+    "name": "Flipkart UI Clone",
+    "desc": "A pixel-perfect UI clone of Flipkart's landing page, focusing on user experience and responsive design principles.",
+    "image": "flipkart.png",
+    "category": "basicweb",
     "links": {
-      "view": "https://piyushverma246.github.io/Animal-Rescue/",
-      "code": "https://github.com/PiyushVerma246/Animal-Rescue"
+      "view": "https://piyushverma246.github.io/Flipkart-Clone/",
+      "code": "https://github.com/PiyushVerma246/Flipkart-Clone"
+    }
+  },
+  {
+    "name": "Meesho UI Research",
+    "desc": "Deep research and UI implementation of Meesho's micro-interaction patterns and vendor-facing dashboard.",
+    "image": "meesho.png",
+    "category": "basicweb",
+    "links": {
+      "view": "https://piyushverma246.github.io/Meesho-UI/",
+      "code": "https://github.com/PiyushVerma246/Meesho-UI"
     }
   }
- 
 ]

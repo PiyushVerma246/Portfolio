@@ -139,23 +139,73 @@ async function fetchData(type = "skills") {
     return data;
 }
 
-function showSkills(skills) {
+function showSkills(data) {
     let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        // Support remote URLs and project-relative paths.
-        const safeSrc = skill.icon || '';
-        const fallbackSvg = encodeURIComponent(`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>\n  <rect width='100%' height='100%' fill='%23012670' rx='8'/>\n  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23fff'>No Image</text>\n</svg>`);
+    if (!skillsContainer) return;
 
-        skillHTML += `
-                <div class="bar">
-                    <div class="info">
-                        <img src="${safeSrc}" alt="${skill.name}" draggable="false" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,${fallbackSvg}'" />
-                        <span>${skill.name}</span>
-                    </div>
+    let html = "";
+    
+    const subtitles = {
+        "Frontend Development": "Crafting interactive UI/UX",
+        "Backend & Database": "Architecting robust systems",
+        "Tools & Cloud": "Deployment & workflows"
+    };
+
+    if (data.length > 0 && data[0].category) {
+        html += `<div class="skills-showcase">`;
+        data.forEach((cat, index) => {
+            const sub = subtitles[cat.category] || "Technical proficiency";
+            html += `
+            <div class="skill-row" style="animation-delay: ${index * 0.1}s">
+                <div class="skill-row-title">
+                    <h3>${cat.category}</h3>
+                    <p>${sub}</p>
+                </div>
+                <div class="skill-row-items">
+            `;
+            cat.skills.forEach(skill => {
+                const safeSrc = skill.icon || '';
+                const fallbackSvg = encodeURIComponent(`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>\n  <rect width='100%' height='100%' fill='%23012670' rx='8'/>\n  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23fff'>No Image</text>\n</svg>`);
+
+                html += `
+                <div class="skill-pill tilt">
+                    <img src="${safeSrc}" alt="${skill.name}" draggable="false" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,${fallbackSvg}'" />
+                    <span>${skill.name}</span>
                 </div>`;
-    });
-    skillsContainer.innerHTML = skillHTML;
+            });
+            html += `</div></div>`;
+        });
+        html += `</div>`;
+        
+        skillsContainer.parentElement.innerHTML = html;
+        
+        if (window.VanillaTilt) {
+            VanillaTilt.init(document.querySelectorAll(".skill-pill"), {
+                max: 15,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.3,
+            });
+            VanillaTilt.init(document.querySelectorAll(".skill-row"), {
+                max: 2,
+                speed: 800,
+            });
+        }
+    } else {
+        html += `<div class="skills-showcase"><div class="skill-row"><div class="skill-row-items">`;
+        data.forEach(skill => {
+            const safeSrc = skill.icon || '';
+            const fallbackSvg = encodeURIComponent(`<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>\n  <rect width='100%' height='100%' fill='%23012670' rx='8'/>\n  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' fill='%23fff'>No Image</text>\n</svg>`);
+
+            html += `
+                <div class="skill-pill tilt">
+                    <img src="${safeSrc}" alt="${skill.name}" draggable="false" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,${fallbackSvg}'" />
+                    <span>${skill.name}</span>
+                </div>`;
+        });
+        html += `</div></div></div>`;
+        skillsContainer.parentElement.innerHTML = html;
+    }
 }
 
 function showProjects(projects) {
@@ -292,8 +342,7 @@ srtop.reveal('.about .content .resumebtn', { delay: 200 });
 
 
 /* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
+srtop.reveal('.skills .skill-row', { interval: 200, distance: '50px' });
 
 /* SCROLL EDUCATION */
 srtop.reveal('.education .box', { interval: 200 });
@@ -369,23 +418,25 @@ fetch('events.json')
             eventsContainer.innerHTML = '<p class="muted">No events available. Add entries to <code>events.json</code>.</p>';
             return;
         }
+        eventsContainer.className = 'events-gallery';
         eventsContainer.innerHTML = '';
+        
+        // Disable previous mouse trackers if any
+        eventsContainer.onmousemove = null;
+
         list.forEach((item, index) => {
             const card = document.createElement('div');
-            card.className = 'event-card tilt';
+            card.className = 'gallery-item tilt';
 
             card.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" draggable="false"/>
-                <div class="content">
-                    <h3>${item.title}</h3>
-                    <div class="date">${item.date}</div>
-                    <p>${item.description}</p>
-                    <div class="btn-wrap">
-                        <button class="terminal-btn view-event-btn" data-index="${index}">View <i class="fas fa-terminal"></i></button>
-                    </div>
+                <img class="gallery-image" src="${item.image}" alt="${item.title}" draggable="false"/>
+                <div class="gallery-overlay">
+                    <div class="gallery-date">${item.date}</div>
+                    <h3 class="gallery-title">${item.title}</h3>
+                    <p class="gallery-desc">${item.description}</p>
+                    <button class="gallery-btn view-event-btn" data-index="${index}">Open Gallery <i class="fas fa-expand"></i></button>
                 </div>
             `;
-
             eventsContainer.appendChild(card);
         });
 

@@ -20,6 +20,26 @@
     }
   },
   {
+    "name": "AniCure",
+    "desc": "Anicure combines AI, geolocation, and blockchain technology to streamline animal rescue and welfare services.",
+    "image": "anicure.png",
+    "category": "mern",
+    "links": {
+      "view": "https://piyushverma246.github.io/Animal-Rescue/",
+      "code": "https://github.com/PiyushVerma246/Animal-Rescue"
+    }
+  },
+  {
+    "name": "DevMeet",
+    "desc": "DevMeet is a developer collaboration platform that helps programmers connect, build teams, and collaborate on projects and hackathons based on their skills and interests.",
+    "image": "devmeet.png",
+    "category": "mern",
+    "links": {
+      "view": "https://dev-meet-opal.vercel.app/",
+      "code": "https://github.com/PiyushVerma246/DevMeet"
+    }
+  },
+  {
     "name": "Designed from Start to Finish",
     "desc": "This Agrowise PPT showcases my design capabilities. Every slide has been manually crafted in PowerPoint—no AI tools were used.",
     "image": "agro.jpg",
@@ -37,6 +57,7 @@
       "view": "https://drive.google.com/file/d/1vF8lIFTqbEya-g5MEk5S0CcM3R2_lseE/view?usp=sharing"
     }
   },
+  
   {
     "name": "RS_Photography_Edit",
     "desc": "a Photography website using HTML, CSS only. It has A Massive Collection of High-Quality images, videos & editing tutorials",
@@ -47,16 +68,8 @@
       "code": "https://github.com/PiyushVerma246/rs_photography_edit"
     }
   },
-  {
-    "name": "Animal Rescue",
-    "desc": "An animal rescue website using HTML, CSS & JS only. It is a platform where we adopt, donate & rescue animals.",
-    "image": "rescue.png",
-    "category": "basicweb",
-    "links": {
-      "view": "https://piyushverma246.github.io/Animal-Rescue/",
-      "code": "https://github.com/PiyushVerma246/Animal-Rescue"
-    }
-  },
+ 
+  
   {
     "name": "Travello",
     "desc": "Travello is user centric website which offers all travel-realted needs of user in one place",
